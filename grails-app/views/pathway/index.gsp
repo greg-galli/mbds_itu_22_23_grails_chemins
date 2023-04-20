@@ -51,10 +51,13 @@
                             <td><ul><li><a href="/poi/show/1">projet_itu_mbds_22_23.Poi : 1</a></li><li><a
                                     href="/poi/show/2">projet_itu_mbds_22_23.Poi : 2</a></li><li><a
                                     href="/poi/show/3">projet_itu_mbds_22_23.Poi : 3</a></li></ul></td>
-                            <td><ul><li><a href="/illustration/show/16">projet_itu_mbds_22_23.Illustration : 16</a>
-                            </li><li><a href="/illustration/show/17">projet_itu_mbds_22_23.Illustration : 17</a></li>
-                            </ul>
+
+                            <td>
+                                <g:each in="${pathway.illustrations}" var="illu">
+                                    <img src="${grailsApplication.config.config.illustrations.baseUrl+illu.filename}" />
+                                </g:each>
                             </td>
+
                         </tr>
                     </g:each>
                     </tbody>

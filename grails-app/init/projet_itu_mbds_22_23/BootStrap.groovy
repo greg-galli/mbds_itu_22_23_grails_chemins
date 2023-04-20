@@ -18,7 +18,7 @@ class BootStrap {
                         String nomPacours ->
                                 def parcoursInstance = new Pathway(title: nomPacours, description: "Une belle description")
                                 (1..2).each {
-                                    parcoursInstance.addToIllustrations(new Illustration(filename: "filename$nomPacours$it"))
+                                    parcoursInstance.addToIllustrations(new Illustration(filename: "grails.svg"))
                                 }
                                 // Création des POIs
                                 ["Premier", "Second", "Troisième"].each {

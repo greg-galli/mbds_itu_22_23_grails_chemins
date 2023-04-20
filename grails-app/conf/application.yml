@@ -141,3 +141,7 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+config:
+    illustrations:
+        basePath: C:/Users/gregg/IdeaProjects/projet_itu_mbds_22_23/grails-app/assets/images/
+        baseUrl: http://localhost:8080/assets/
