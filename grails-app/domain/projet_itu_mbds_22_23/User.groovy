@@ -18,6 +18,10 @@ class User implements Serializable {
     boolean accountLocked
     boolean passwordExpired
 
+    static hasMany = [parcours: Pathway]
+
+    static mappedBy = [parcours: "author"]
+
     Set<Role> getAuthorities() {
         (UserRole.findAllByUser(this) as List<UserRole>)*.role as Set<Role>
     }

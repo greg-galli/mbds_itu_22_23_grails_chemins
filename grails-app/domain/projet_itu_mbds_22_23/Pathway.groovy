@@ -9,7 +9,11 @@ class Pathway {
     List pois
 
 
-    static hasMany = [pois: Poi, illustrations: Illustration]
+    static hasMany = [pois: Poi,
+                      illustrations: Illustration,
+                      moderateurs: User]
+
+    static belongsTo = [author: User]
 
     static constraints = {
         title nullable: false, blank: false, size: 5..55

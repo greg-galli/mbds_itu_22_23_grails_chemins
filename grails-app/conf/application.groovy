@@ -7,6 +7,7 @@ grails.plugin.springsecurity.authority.className = 'projet_itu_mbds_22_23.Role'
 grails.plugin.springsecurity.rest.token.storage.jwt.secret= "thisisalongsecrettoactasajwttoken"
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
+	[pattern: '/h2-console/**',  access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
 	[pattern: '/index',          access: ['permitAll']],
 	[pattern: '/index.gsp',      access: ['permitAll']],
