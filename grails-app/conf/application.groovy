@@ -5,6 +5,7 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'projet_itu_mbds_2
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'projet_itu_mbds_22_23.UserRole'
 grails.plugin.springsecurity.authority.className = 'projet_itu_mbds_22_23.Role'
 grails.plugin.springsecurity.rest.token.storage.jwt.secret= "thisisalongsecrettoactasajwttoken"
+grails.plugin.springsecurity.logout.postOnly=false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/h2-console/**',  access: ['permitAll']],
