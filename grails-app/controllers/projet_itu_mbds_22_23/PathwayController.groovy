@@ -1,13 +1,17 @@
 package projet_itu_mbds_22_23
 
+import grails.plugin.springsecurity.SpringSecurityService
 import grails.plugin.springsecurity.annotation.Secured
 import grails.validation.ValidationException
+import org.springframework.web.multipart.MultipartFile
+
 import static org.springframework.http.HttpStatus.*
 
 @Secured('isFullyAuthenticated()')
 class PathwayController {
 
     PathwayService pathwayService
+    SpringSecurityService springSecurityService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -29,6 +33,12 @@ class PathwayController {
             notFound()
             return
         }
+
+        MultipartFile file = request.getFile('illu')
+        file.transferTo(new File(grailsApplication.config.config.illustrations.basePath+"toto.png"))
+        pathway.addToIllustrations(new Illustration(filename: "toto.png"))
+        pathway.author = ((User)springSecurityService.getCurrentUser())
+
 
         try {
             pathwayService.save(pathway)
